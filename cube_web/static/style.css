@@ -1,0 +1,214 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #000000;
+  margin-bottom: 0px;
+  font-weight: 500;
+}
+
+
+h2 {
+  color: #000000;
+  margin-bottom: 0px;
+  font-weight: 500;
+}
+
+#cube-canvas {
+  margin: 0px auto;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.button-group {
+  margin: 20px 0;
+}
+
+.scramble-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#scramble-steps {
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+  background-color: #e9ecef;
+  color: #000000;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 3px;
+  background-color: #e9ecef;
+  color: #000000;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s;
+  outline: none; 
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.info-section {
+  margin: 20px 0;
+  padding: 15px;
+  text-align: left;
+}
+
+.info-section h2 {
+  color: #000000;
+  font-size: 1.2em;
+  margin-top: 0;
+  font-weight: 500;
+}
+
+pre {
+  background-color: #e9ecef;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 500;
+  height: 24px;
+  line-height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.key-guide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 50px;
+}
+
+.key-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 150px;
+}
+
+.key {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #e9ecef;
+  border-radius: 3px;
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.button-group button {
+  transition: background-color 0.3s ease;
+}
+
+#next-step-mode {
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.heatmap-container {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+#heatmap-canvas {
+  display: block;
+  margin: 0 auto;
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -o-crisp-edges;
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+.heatmap-legend {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+}

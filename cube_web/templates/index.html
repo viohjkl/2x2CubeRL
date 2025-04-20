@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二阶魔方教学</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>二阶魔方教学</h1>
+        
+        <canvas id="cube-canvas" width="400" height="250"></canvas>
+        
+        <div class="button-group">
+            <div class="scramble-controls">
+                <select id="scramble-steps" title="选择打乱步数">
+                    <option value="1">1步</option>
+                    <option value="2">2步</option>
+                    <option value="3">3步</option>
+                    <option value="4">4步</option>
+                    <option value="5">5步</option>
+                    <option value="6">6步</option>
+                    <option value="7">7步</option>
+                    <option value="8">8步</option>
+                    <option value="9">9步</option>
+                    <option value="10">10步</option>
+                    <option value="11" selected>11步</option>
+                    <option value="12">12步</option>
+                </select>
+                <button id="scramble-btn">打乱</button>
+                <button id="reset-btn">复原</button>
+            </div>
+            <button id="solve-btn">求解</button>
+            <button id="next-step-btn">提示</button>
+            <button id="next-step-mode" value="full">切换</button>
+        </div>
+        
+        <div class="button-group">
+            <button id="f-btn">F</button>
+            <button id="r-btn">R</button>
+            <button id="u-btn">U</button>
+            <button id="f-prime-btn">F'</button>
+            <button id="r-prime-btn">R'</button>
+            <button id="u-prime-btn">U'</button>
+        </div>
+        
+        <div class="info-section">
+            <h2>打乱/解法</h2>
+            <pre id="solution"></pre>
+        </div>
+        
+        <div class="info-section">
+            <h2>说明</h2>
+            <div class="formula-guide">
+                <div>F - 正面 (Front)</div>
+                <div>R - 右面 (Right)</div>
+                <div>U - 顶面 (Up)</div>
+                <div>默认为顺时针旋转，带撇号(')表示逆时针旋转，例如 F' 代表逆时针旋转正面</div>
+                <div>求解和提示可通过“切换“来更改模式，默认为完整求解模式</div>
+                <div>求解可视化和提示中绿色越深代表选择越好，红色越深代表选择越差</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>快捷键</h2>
+            <div class="key-guide">
+                <div class="key-item"><span class="key">f</span> - 正面顺时针</div>
+                <div class="key-item"><span class="key">r</span> - 右侧顺时针</div>
+                <div class="key-item"><span class="key">u</span> - 顶面顺时针</div>
+                <div class="key-item"><span class="key">g</span> - 正面逆时针</div>
+                <div class="key-item"><span class="key">t</span> - 右侧逆时针</div>
+                <div class="key-item"><span class="key">i</span> - 顶面逆时针</div>
+                <div class="key-item"><span class="key">z</span> - 打乱</div>
+                <div class="key-item"><span class="key">x</span> - 求解</div>
+                <div class="key-item"><span class="key">c</span> - 下一步</div>
+                <div class="key-item"><span class="key">j</span> - 复原</div>
+                <div class="key-item"><span class="key">k</span> - 切换</div>
+            </div>
+        </div> 
+    </div>
+    
+    <script>
+        const initialState = "{{ initial_state }}";
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <div id="heatmap-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>求解过程可视化</h2>
+            <div class="heatmap-container">
+                <canvas id="heatmap-canvas"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

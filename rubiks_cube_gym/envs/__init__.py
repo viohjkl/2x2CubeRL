@@ -1,0 +1,4 @@
+from rubiks_cube_gym.envs.rubiks_cube_222 import RubiksCube222Env
+from rubiks_cube_gym.envs.rubiks_cube_222_one_face import RubiksCube222EnvOneFace
+from rubiks_cube_gym.envs.rubiks_cube_222_dqn import RubiksCube222DQNEnv
+
