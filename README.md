@@ -33,7 +33,7 @@
 2. **克隆仓库** :
    
    ```bash
-   git clone 
+   git clone https://github.com/viohjkl/2x2CubeRL.git
    cd 2x2CubeRL
    ```
 
